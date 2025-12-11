@@ -1,6 +1,7 @@
 package com.example.weatherposting.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 public class WeatherEntry {
     @Id
+    @GeneratedValue
     private long id;
 
     private String city;
@@ -16,8 +18,8 @@ public class WeatherEntry {
     private LocalDateTime createdAt;
 
 
-    public WeatherEntry(long id, String city, double temperature, String note, LocalDateTime createdAt) {
-        this.id = id;
+    public WeatherEntry(String city, double temperature, String note, LocalDateTime createdAt) {
+
         this.city = city;
         this.temperature = temperature;
         this.note = note;

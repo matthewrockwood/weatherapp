@@ -16,7 +16,7 @@ public class WeatherAppController {
     private WeatherService service;
     @PostMapping
     public WeatherEntry postWeather(@RequestParam String city, @RequestParam String msg){
-        return service.addEntry(city, msg);
+        return service.addEntry(city, msg).orElse(null);
     }
     @GetMapping
     public List<WeatherEntry> getWeather(){
